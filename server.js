@@ -12,7 +12,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+const cors = require("cors");
+
 const app = express();
+app.use(cors()); // ✅ Allow all origins (default)
 app.use(express.json());
 
 // --- MongoDB Models ---
